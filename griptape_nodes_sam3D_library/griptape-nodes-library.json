@@ -1,0 +1,65 @@
+{
+  "name": "SAM3D Library",
+  "library_schema_version": "0.3.0",
+  "advanced_library_path": "sam3D_library_advanced.py",
+  "metadata": {
+    "author": "griptape-ai",
+    "description": "SAM3D - 3D mesh and Gaussian splat reconstruction from SAM3 segmentation masks",
+    "library_version": "0.1.0",
+    "engine_version": "0.75.0",
+    "tags": [
+      "Griptape",
+      "AI",
+      "SAM3D",
+      "Mesh Generation",
+      "Gaussian Splatting",
+      "Computer Vision",
+      "3D Reconstruction",
+      "Meta"
+    ],
+    "dependencies": {
+      "pip_dependencies": [
+        "torch==2.7.0",
+        "torchvision==0.22.0",
+        "pytorch3d",
+        "trimesh",
+        "imageio"
+      ],
+      "pip_install_flags": [
+        "--preview",
+        "--torch-backend=auto"
+      ]
+    },
+    "resources": {
+      "required": {
+        "compute": [
+          [
+            "cuda"
+          ],
+          "has_any"
+        ]
+      }
+    }
+  },
+  "categories": [
+    {
+      "3d/reconstruction": {
+        "color": "border-teal-500",
+        "title": "3D/Reconstruction",
+        "description": "3D reconstruction and generation nodes",
+        "icon": "Box"
+      }
+    }
+  ],
+  "nodes": [
+    {
+      "class_name": "Sam3dGenerateObject",
+      "file_path": "sam3d_generate_object.py",
+      "metadata": {
+        "category": "3d/reconstruction",
+        "description": "Generate a 3D object from SAM3 segmentation masks and the original image",
+        "display_name": "SAM3D Generate Object"
+      }
+    }
+  ]
+}
